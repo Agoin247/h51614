@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+
+	<script>
+		var name = "全局1111";
+		{}//花括号就代表个对象
+		function Person(name,height){
+			this.name = name;
+			this.height = height;
+		};
+		Person.prototype.sayName = function(){
+				console.log("我的名字叫：" + this.name);
+		};
+		
+		var hd = new Person("韩东",190);	//实例
+		var lw = new Person("李伟",174);	//实例
+
+		console.log("lw的名字:" + lw.name);
+		lw.sayName();
+		hd.sayName();
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script >
+		
+		var a;
+		a = 1;
+		a = 'hello';
+
+		
+		
+		/*var gNum = function(){
+			console.log(a + " world");
+		};
+		gNum();
+		gNum1();
+		
+		function gNum1(){
+			console.log(a + " world");
+		}*/
+
+		var gNum = function(num, round){
+			if (num > round)
+				throw new Error("参数出错");	
+			var arg = [];
+			var flag = false;	//是否有重复
+			for(var i = 0;i < num;){
+				var rand = parseInt(Math.random() * round) + 1;  
+				for(var j = 0; j < arg.length;j++){
+					if (arg[j] == rand){//重复
+						flag = true;
+						break;
+					}
+				}
+				if (flag){
+					flag = false;
+				}else{
+					i++;
+					arg.push(rand);
+				}
+
+			}
+			//console.log("排序前：" + arg);
+			arg.sort(function(a,b){
+				return a - b;
+			});//冒泡排序
+			//console.log("排序后：" + arg);
+			return arg;
+		}
+		for(var i = 0; i < 5;i++){
+			console.log(gNum(5, 21));
+		}
+		/*try{
+			var result = gNum(144,132);
+			console.log("1.正常");
+		}catch(e){
+			console.log("2.异常处理");
+			console.log(e);
+		}
+		console.log("3.正常流程");*/
+		
+		/*if(result == null) {
+			console.log("参数出错");
+		}*/
+
+		/*var arg = [];
+		var flag = false;	//是否有重复
+		for(var i = 0;i < 7;){
+			var rand = ~~(Math.random() * 36) + 1;  
+
+			for(var j = 0; j < arg.length;j++){
+				if (arg[j] == rand){//重复
+					flag = true;
+					break;
+				}
+			}
+			if (flag){
+				flag = false;
+			}else{
+				i++;
+				arg.push(rand);
+			}
+
+		}
+		console.log("排序前：" + arg);
+		arg.sort(function(a,b){
+			return a - b;
+		});//冒泡排序
+		console.log("排序后：" + arg);*/
+	</script>
+</body>
+</html>

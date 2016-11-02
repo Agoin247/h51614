@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的特性的设置</title>
+</head>
+<body>
+	<script >
+		//
+		//1.数值属性
+		var tom = {
+			name : "tom"
+		};
+		
+		//ES 5
+		
+		Object.defineProperty(tom,"age",{
+			/*configurable:false,
+			writable:false,
+			enumerable:false,*/
+			value:19
+		});	//
+		delete tom.age;
+		console.log(tom.age);
+		//
+		for(var p in tom){
+			console.log(p);
+		}
+
+		tom.age = 200;
+		console.log(tom.age);
+
+		delete tom.name;
+		console.log(tom.name);
+
+		console.log("--------------------");
+		//2.访问器属性
+		//configurable
+		//enumerable
+		//get
+		//set
+		var jarry = {
+			name : 'jarry',
+			born : new Date('1993-01-01')
+		};
+		Object.defineProperty(jarry, 'age', {
+			configurable:true,
+			enumerable:true,
+			get:function(){
+				//console.log("this is get method");
+				var result = new Date().getFullYear() - this.born.getFullYear();
+				return result;
+			},
+			set:function(born){
+				//console.log("this is set method");
+				this.born = new Date(born);
+			}
+		});
+
+		jarry.age = '1997-02-01';
+		console.log("jarry今年：" + jarry.age+ "岁");
+
+		//3.如何一次定义多个属性及特性。
+		var mark = {};
+		Object.defineProperties(mark, {
+			name:{
+				enumerable:true,
+				value:'mark'
+			},
+			age:{
+				value:22
+			},
+			weight:{
+				value:88.8
+			},
+			run:{
+				value:function(){
+					console.log(this.name + "在走路");
+				}
+			}
+		});
+
+		console.log(mark.name);
+		console.log(mark.age);
+		console.log(mark.weight);
+		mark.run();
+		for(var p in mark){
+			console.log("p = " + p);
+		}
+	</script>
+</body>
+</html>

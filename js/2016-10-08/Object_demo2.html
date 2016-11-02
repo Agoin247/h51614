@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象</title>
+</head>
+<body>
+	<script>
+		/*function Human(){
+			console.log("我是人");
+			return new Object();
+		}
+		var a = Human();
+		var tom = new Human();
+		var jarry = new Human();
+
+		console.log(a);
+		console.log(tom);
+		console.log(jarry);
+
+		console.log(tom == jarry);	*/
+		//1.构造函数创建对象的方法
+		/*function Human(name,height){
+			this.name = name;
+			this.height = height;
+			this.sayHello = function(){
+				console.log(this.name + "大家好！");
+			}
+		}
+
+		var tom = new Human("tom",174);
+		console.log(tom.name);
+		var jarry = new Human("jarry",170);
+		console.log(jarry.name);
+		tom.sayHello();
+		jarry.sayHello();*/
+
+		//2.创建对象的方法，字面量
+		var mark = {
+			name : 'mark',
+			height : 188,
+			sayHello : function(){
+				console.log("my name is " + this.name);
+			}
+		}
+		var tom = {
+			name : 'tom',
+			height : 194,
+			say : function(){
+				console.log("my name is " + this.name);
+			},
+			speak : function(){
+				console.log("speak " + this.name);
+			}
+		}
+
+		//console.log(typeof "hello");
+		//console.log(typeof function(){});
+
+		/*var persons = [mark, tom];
+		//调用数组中对象里的方法进行调用
+		
+
+		for(var i = 0;i < persons.length;i++){
+			for(var prop in persons[i]){
+				//是方法就调用，不是方法就忽略
+				if ((typeof persons[i][prop]) === 'function' ){
+					persons[i][prop]();
+				}
+			}
+		}*/
+		//ES5 Objec.create();
+
+
+		//属性
+		//1.数据属性
+		//[[configurable]]
+		//[[enumerable]]
+		//[[writable]]
+		//[[value]]
+		/*console.log("mark.name = " + mark.name);
+		delete mark.name;	//删除对象中指定的属性
+		console.log("mark.name = " + mark.name);
+		*/
+		/*for(var prop in mark){
+			console.log("属性名：" + prop + ",值：" + mark[prop])
+		}*/
+		/*console.log("mark.name = " + mark.name);
+		mark.name = 'small mark';
+		console.log("mark.name = " + mark.name);*/
+
+		/*var myArry = [1,2,3,4,5,6,7];
+		myArry.name = "我是数组";
+
+		console.log(myArry.name);
+		console.log(myArry['name']);
+		console.log(myArry['0']);
+		console.log(myArry[0]);*/
+
+		/*for(var i = 0;i < myArry.length;i++){
+			console.log("myArry["+i+"]= " + myArry[i]);
+		}
+		console.log("---------------------------");
+		for(var p in myArry){
+			console.log("属性名：" + p + ",对应的值：" + myArry[p]);
+		}*/
+
+		/*var i = 11;
+		if (i >  10)
+			console.log("i > 10")
+		else
+			console.log("i <= 10");
+		while(i > 0){
+			console.log("abc");
+			i--;
+		}*/
+		
+
+	</script>
+</body>
+</html>
