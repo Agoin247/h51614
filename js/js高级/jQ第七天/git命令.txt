@@ -1,0 +1,75 @@
+$  ssh-keygen -t rsa -C "582234123@qq.com"
+$ ssh -T git@github.com
+
+
+管理源代码工具
+cvs
+svn
+git
+
+1.创建github账号，安装git
+2.在本地进行ssh（）
+
+
+cmd中
+找到文件夹目录
+建立一个仓库  管理源代码
+git init   初始化仓库
+
+git status   查看仓库状态
+
+git add+文件名   把文件提交到仓库缓存中
+
+git commit -m "备忘信息"    把缓存中的文件提交到仓库中
+
+git log   查看提交历史
+
+git diff   查看更改前后的差别  无修改就无显示
+
+git branch   查看当前所有分支名，绿色为当前分支
+
+git branch +分支名    创建分支
+
+git checkout -b +分支名   创建并切换分支（进入新建分支）
+
+git checkout cart-a   切换当前分支  （cart-a为分支名）
+
+git commit -m "update index.html"  创建文件
+
+git log --graph     查看提交历史的图形形式
+
+git reset --hard +提交到仓库的id  就会回到那个状态（回溯）
+
+git merge cart-b   当前分支与b分支合并
+
+
+
+远程推送
+
+git remote add origin git@github.com:Agoin247/h51614.git
+
+判断是否在主干上
+
+git push -u origin master    推送主干，第一次推送需要两个参数-u origin
+
+git pull   从gitpub上拉回库中文件
+
+git pull origin master --allow-unrelate
+
+git clone +地址
+
+git push  推送
+
+
+
+把本地模块发布到npm站点上
+npm adduser
+npm publish 发布
+！要保证在站点上无重名
+
+如何撤销模块注册
+
+npm unpublish +要卸载的模块名@版本号(例：v1.0.0) --force
+
+安装已经注册的npm包
+npm install +模块名   （不用+版本号，会自动下最新的）
